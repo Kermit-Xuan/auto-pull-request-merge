@@ -1,5 +1,5 @@
 import * as core from '@actions/core'
-import {Inputs, Merger} from './merger'
+import {Inputs, Merger, MergeMethod} from './merger'
 import {inspect} from 'util'
 
 async function run(): Promise<void> {
@@ -24,7 +24,8 @@ async function run(): Promise<void> {
       pullRequestNumber: Number(core.getInput('pullRequestNumber')),
       sha: core.getInput('sha'),
       token: core.getInput('token'),
-      timeoutSeconds: Number(core.getInput('timeoutSeconds'))
+      timeoutSeconds: Number(core.getInput('timeoutSeconds')),
+      'merge-method': core.getInput('merge-method') as MergeMethod
     }
 
     core.debug(`Inputs: ${inspect(inputs)}`)

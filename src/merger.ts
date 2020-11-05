@@ -3,6 +3,8 @@ import * as core from '@actions/core'
 import Retry from './retry'
 import {inspect} from 'util'
 
+export type MergeMethod = 'squash' | 'merge' | 'rebase'
+
 export interface Inputs {
   checkStatus: boolean
   comment: string
@@ -16,6 +18,7 @@ export interface Inputs {
   sha: string
   token: string
   timeoutSeconds: number
+  'merge-method': MergeMethod
 }
 
 export class Merger {
@@ -114,7 +117,8 @@ export class Merger {
       await client.pulls.merge({
         owner,
         repo,
-        pull_number: this.cfg.pullRequestNumber
+        pull_number: this.cfg.pullRequestNumber,
+        merge_method: this.cfg['merge-method']
       })
     } catch (err) {
       core.debug(`Error on retry error:${inspect(err)}`)
