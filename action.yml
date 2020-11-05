@@ -46,6 +46,10 @@ inputs:
     required: false
     description: 'Credential to access to the repo to post the comment'
     default: ${{ github.token }}
+  merge-method:
+    required: false
+    description: 'Merge Method'
+    default: 'squash'
 runs:
   using: 'node12'
   main: 'dist/index.js'

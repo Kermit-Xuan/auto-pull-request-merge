@@ -47,6 +47,7 @@ jobs:
 | `sha` | SHA of the commit. | `github.event.pull_request.head.number` |
 | `timeoutSeconds` | Seconds to timeout this action | `60`
 | `token` | `GITHUB_TOKEN` or a `repo` scoped [PAT](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token). | `GITHUB_TOKEN` |
+| `merge-method` | Merge Method | `'squash'`
 
 ### Action outputs
 
