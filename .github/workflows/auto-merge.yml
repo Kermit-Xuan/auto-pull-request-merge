@@ -2,7 +2,7 @@ name: Auto merge
 on: 
   pull_request:
     branches: [ main ]
-    types: [opened, synchronize, edited]
+    types: [opened, synchronize, edited, reopened]
 
 jobs:
   merge:
