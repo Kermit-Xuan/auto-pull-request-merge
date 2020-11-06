@@ -1,7 +1,5 @@
 name: Auto merge
-on: 
-  pull_request:
-    branches: [ main ]
+on: pull_request
 
 jobs:
   merge:
@@ -12,3 +10,5 @@ jobs:
         with:
           intervalSeconds: 1
           timeoutSeconds: 60
+          labels: mergable
+          ignoreLabels: notMergable
