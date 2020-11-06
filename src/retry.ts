@@ -36,7 +36,12 @@ export default class Retry {
       try {
         return await f(count++)
       } catch (err) {
+<<<<<<< HEAD
         core.error(`Catch error for retry try ${err}`)
+=======
+        console.log(`Catch error for retry try ${err}`)
+        core.debug(`Catch error for retry try ${err}`)
+>>>>>>> 94bc864... chore: add debug
       } finally {
         await this.wait()
       }
