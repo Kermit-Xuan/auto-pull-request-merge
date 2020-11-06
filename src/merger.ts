@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import * as github from '@actions/github'
 import * as core from '@actions/core'
 import Retry from './retry'
@@ -80,12 +81,13 @@ export class Merger {
               })
 
               const totalStatus = checks.total_count
-              console.log(totalStatus)
               const totalSuccessStatuses = checks.check_runs.filter(
                 check =>
                   check.conclusion === 'success' ||
                   check.conclusion === 'skipped'
               ).length
+
+              console.log(totalStatus, totalSuccessStatuses)
 
               if (totalStatus - 1 !== totalSuccessStatuses) {
                 throw new Error(
