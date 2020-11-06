@@ -87,8 +87,6 @@ export class Merger {
                   check.conclusion === 'skipped'
               ).length
 
-              console.log(totalStatus, totalSuccessStatuses)
-
               if (totalStatus - 1 !== totalSuccessStatuses) {
                 throw new Error(
                   `Not all status success, ${totalSuccessStatuses} out of ${totalStatus} success`
