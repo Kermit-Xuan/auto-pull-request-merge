@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import * as core from '@actions/core'
 import dayjs from 'dayjs'
 
@@ -36,7 +35,7 @@ export default class Retry {
       try {
         return await f(count++)
       } catch (err) {
-        core.error(`Catch error for retry try ${err}`)
+        core.debug(`Catch error for retry try ${err}`)
       } finally {
         await this.wait()
       }
