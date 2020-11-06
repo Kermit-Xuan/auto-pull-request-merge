@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import * as github from '@actions/github'
 import * as core from '@actions/core'
 import Retry from './retry'
@@ -85,6 +86,8 @@ export class Merger {
                   check.conclusion === 'success' ||
                   check.conclusion === 'skipped'
               ).length
+
+              console.log(totalStatus, totalSuccessStatuses)
 
               if (totalStatus - 1 !== totalSuccessStatuses) {
                 throw new Error(
