@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import * as github from '@actions/github'
 import * as core from '@actions/core'
 import Retry from './retry'
