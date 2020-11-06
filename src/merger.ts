@@ -81,6 +81,7 @@ export class Merger {
               })
 
               const totalStatus = checks.total_count
+              console.log(totalStatus)
               const totalSuccessStatuses = checks.check_runs.filter(
                 check =>
                   check.conclusion === 'success' ||
