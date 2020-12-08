@@ -1,7 +1,9 @@
 name: 'build-test'
 on:
   push:
+    branches: [ main ]
   pull_request:
+    branches: [ main ]
 
 jobs:
   build: # make sure build/ci work properly

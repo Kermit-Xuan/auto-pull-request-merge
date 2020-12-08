@@ -79,6 +79,8 @@ export class Merger {
                 ref: this.cfg.sha
               })
 
+              core.debug(`Total Checks: ${inspect(checks)}`)
+
               const totalStatus = checks.total_count
               const totalSuccessStatuses = checks.check_runs.filter(
                 check =>
